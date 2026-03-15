@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://image.thum.io/get/width/900/https://amirabenameur3.github.io/shadowpixel-gaming-club/" alt="ShadowPixel Gaming Club preview">
+  <img src="https://image.thum.io/get/width/900/https://amirabenameur3.github.io/ShadowPixel-Gaming-Club/" alt="ShadowPixel Gaming Club preview">
 </p>
 
 <h1 align="center">🎮 ShadowPixel Gaming Club</h1>
@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-  <a href="https://amirabenameur3.github.io/shadowpixel-gaming-club/"><b>🌐 View Live Website</b></a>
+  <a href="https://amirabenameur3.github.io/ShadowPixel-Gaming-Club/"><b>🌐 View Live Website</b></a>
 </p>
 
 ---
@@ -176,6 +176,59 @@ shadowpixel-gaming-club
 │   │   └── styles.css
 │   └── images
 │
+```
+
+## 🎯 Learning Objectives
+
+This project helped practice:
+
+- building a website completely from scratch
+- structuring pages with semantic HTML
+- creating layouts with Flexbox and Grid
+- implementing responsive design
+- designing reusable components
+- organizing files for a real project structure
+- managing a project using Git and GitHub
+
+---
+
+## 🚧 Future Improvements
+
+Possible future enhancements:
+
+- add JavaScript interactivity
+- implement a mobile hamburger menu
+- include animated transitions
+- add game trailers or video highlights
+- create a contact form
+- improve accessibility features
+- enhance section animations and micro-interactions
+
+---
+
+## 👩‍💻 Author
+
+**Amira Ben Ameur**
+
+PhD Researcher in Structural & Transportation Engineering  
+Front-End Development Enthusiast
+
+GitHub:  
+[github.com/amirabenameur3](https://github.com/amirabenameur3)
+
+---
+
+## 📌 Disclaimer
+
+This website represents a **fictional gaming community** created for **learning and portfolio purposes**.
+
+It does **not represent a real organization or brand**.
+
+---
+
+## ⭐ If you like the project
+
+Give the repository a **star on GitHub** ⭐
 ├── favicon_shadowpixel.ico
 ├── index.html
 └── README.md
