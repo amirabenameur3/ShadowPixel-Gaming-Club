@@ -96,8 +96,6 @@ This project focuses on building a complete modern landing page from scratch usi
   <img src="./docs/demo.gif" width="900" alt="ShadowPixel Gaming Club demo">
 </p>
 
-> Replace `./docs/demo.gif` with your final GIF file if the filename is different.
-
 ---
 
 ## 📸 Screenshots
