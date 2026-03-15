@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://image.thum.io/get/width/900/https://amirabenameur3.github.io/ShadowPixel-Gaming-Club/" alt="ShadowPixel Gaming Club preview">
+  <img src="./docs/PixelShadows-Gaming-Club-Preview.png" width="900" alt="ShadowPixel Gaming Club preview">
 </p>
 
 <h1 align="center">🎮 ShadowPixel Gaming Club</h1>
@@ -104,7 +104,7 @@ This project focuses on building a complete modern landing page from scratch usi
 
 ### Home Page
 <p align="center">
-  <img src="./docs/shadowpixel_gaming_club_preview.png" width="850" alt="Home Page Screenshot">
+  <img src="./docs/home.png" width="850" alt="Home Page Screenshot">
 </p>
 
 ### About Section
@@ -125,6 +125,16 @@ This project focuses on building a complete modern landing page from scratch usi
 ### Community Section
 <p align="center">
   <img src="./docs/community.png" width="850" alt="Community Section Screenshot">
+</p>
+
+### Testimonials Section
+<p align="center">
+  <img src="./docs/testimonials.png" width="850" alt="Community Section Screenshot">
+</p>
+
+### Join Section
+<p align="center">
+  <img src="./docs/join.png" width="850" alt="Community Section Screenshot">
 </p>
 
 ### Mobile Layout
