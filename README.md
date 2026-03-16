@@ -24,7 +24,9 @@
 </p>
 
 <p align="center">
-  <a href="https://amirabenameur3.github.io/ShadowPixel-Gaming-Club/"><b>🌐 View Live Website</b></a>
+  <a href="https://amirabenameur3.github.io/ShadowPixel-Gaming-Club/">
+  <img src="https://img.shields.io/badge/🌐-Live%20Demo-38bdf8?style=for-the-badge">
+  </a>
 </p>
 
 ---
