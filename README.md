@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/PixelShadows-Gaming-Club-Preview.png" width="900" alt="ShadowPixel Gaming Club preview">
+  <img src="./docs/ShadowPixel-Gaming-Club-Preview.png" width="900" alt="ShadowPixel Gaming Club preview">
 </p>
 
 <h1 align="center">🎮 ShadowPixel Gaming Club</h1>
