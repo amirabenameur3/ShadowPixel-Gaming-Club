@@ -959,19 +959,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .lightbox-prev,
-    .lightbox-next {
-        bottom: 8rem;
-    }
-
-    .lightbox-prev {
-        left: 30%;
-    }
-
-    .lightbox-next {
-        right: 30%;
-    }
-
     .footer-navigation ul {
         gap: 1rem 1.25rem;
     }
