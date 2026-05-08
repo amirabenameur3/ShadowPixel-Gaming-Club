@@ -6,6 +6,7 @@ const menuButton = document.querySelector('.menu-button');
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileLinks = document.querySelectorAll('.mobile-nav a');
 const menuIcon = document.querySelector('.menu-icon');
+const header = document.querySelector('.site-header');
 
 // =========================
 // MOBILE MENU
@@ -51,3 +52,17 @@ if (menuButton && mobileNav && menuIcon) {
         }
     });
 }
+
+// =========================
+// HEADER SCROLL EFFECT
+// =========================
+
+function handleHeaderScroll() {
+    if (!header) return;
+
+    const shouldScroll = window.scrollY > 50;
+
+    header.classList.toggle('scrolled', shouldScroll);
+}
+
+window.addEventListener('scroll', handleHeaderScroll);
