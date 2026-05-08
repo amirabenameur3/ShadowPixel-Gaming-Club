@@ -893,25 +893,37 @@ footer {
         flex: 1 1 100%;
     }
 
+    /* ===== Gallery Lightbox ===== */
+
     .lightbox {
         padding: 1rem;
     }
 
-    /* ===== Gallery Lightbox ===== */
+    .lightbox-content {
+        max-width: 100%;
+    }
+
+    .lightbox-image {
+        max-height: 65vh;
+        object-fit: contain;
+    }
 
     .lightbox-prev,
     .lightbox-next {
+        top: auto;
+        bottom: 6.5rem;
+        transform: none;
         width: 42px;
         height: 42px;
         font-size: 1.4rem;
     }
 
     .lightbox-prev {
-        left: 0.75rem;
+        left: 35%;
     }
 
     .lightbox-next {
-        right: 0.75rem;
+        right: 35%;
     }
 
     .lightbox-close {
@@ -947,6 +959,11 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .lightbox-prev,
+    .lightbox-next {
+        bottom: 10rem;
+    }
+
     .footer-navigation ul {
         gap: 1rem 1.25rem;
     }
@@ -973,5 +990,18 @@ footer {
 
     .social-icon {
         font-size: 0.95rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        bottom: 18rem;
+    }
+
+    .lightbox-prev {
+        left: 30%;
+    }
+
+    .lightbox-next {
+        right: 30%;
     }
 }
