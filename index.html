@@ -128,37 +128,37 @@
                 <div class="gallery-section">
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/gaming-room-setup-neon.jpg" alt="Gaming room setup">
+                            <img src="./resources/images/gaming-room-setup-neon.jpg" alt="Gaming room setup" class="gallery-image" data-caption="Gaming room setup" tabindex="0">
                         </div>
                     </article>
 
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/mechanical-keyboard-neon.jpg" alt="Neon keyboard">
+                            <img src="./resources/images/mechanical-keyboard-neon.jpg" alt="Neon keyboard" class="gallery-image" data-caption="Neon keyboard setup" tabindex="0">
                         </div>
                     </article>
 
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/playstation-controller-rgb.jpg" alt="Playstation controller">
+                            <img src="./resources/images/playstation-controller-rgb.jpg" alt="Playstation controller" class="gallery-image" data-caption="RGB PlayStation controller" tabindex="0">
                         </div>
                     </article>
 
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/people-playing-video-games.jpg" alt="Friends gaming together">
+                            <img src="./resources/images/people-playing-video-games.jpg" alt="Friends gaming together" class="gallery-image" data-caption="Friends gaming together" tabindex="0">
                         </div>
                     </article>
 
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/rgb-gaming-setup.jpg" alt="RGB gaming monitor setup">
+                            <img src="./resources/images/rgb-gaming-setup.jpg" alt="RGB gaming monitor setup" class="gallery-image" data-caption="RGB gaming monitor setup" tabindex="0">
                         </div>
                     </article>
 
                     <article class="gallery-card reveal">
                         <div class="image-container">
-                            <img src="./resources/images/mousepad-neon-gaming.jpg" alt="Gaming mouse and keyboard">
+                            <img src="./resources/images/mousepad-neon-gaming.jpg" alt="Gaming mouse and keyboard" class="gallery-image" data-caption="Gaming mouse and keyboard" tabindex="0">
                         </div>
                     </article>
                 </div>
@@ -291,6 +291,19 @@
                 </div>
             </div>
         </footer>
+        
+        <!-- Lightbox -->
+        <div class="lightbox" id="gallery-lightbox" aria-hidden="true">
+            <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+            <button class="lightbox-prev" type="button" aria-label="Previous image">&larr;</button>
+            
+            <figure class="lightbox-content">
+                <img src="" alt="" class="lightbox-image">
+                <figcaption class="lightbox-caption"></figcaption>
+            </figure>
+            
+            <button class="lightbox-next" type="button" aria-label="Next image">&rarr;</button>
+        </div>
     <script defer src="main.js"></script>  
     </body>
 </html>

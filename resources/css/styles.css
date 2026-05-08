@@ -482,14 +482,25 @@ a:focus-visible, button:focus-visible, .button:focus-visible {
     overflow: hidden;
 }
 
-.image-container img {
+.gallery-image {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     transition: transform 0.4s ease;
+    cursor: pointer;
 }
 
-.image-container:hover img {
+.gallery-image:focus-visible {
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 4px;
+}
+
+.gallery-card:has(.gallery-image:focus-visible) {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.image-container:hover .gallery-image {
     transform: scale(1.05);
 }
 
@@ -671,6 +682,95 @@ footer {
 }
 
 /* =========================
+   Gallery Lightbox
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(15, 23, 42, 0.92);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 900px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.lightbox-image {
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+}
+
+.lightbox-caption {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    border: none;
+    background: rgba(30, 41, 59, 0.85);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+}
+
+.lightbox-close {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+}
+
+.lightbox-prev {
+    left: 1.5rem;
+}
+
+.lightbox-next {
+    right: 1.5rem;
+}
+
+/* =========================
    Responsive
 ========================= */
 
@@ -791,6 +891,32 @@ footer {
 
     .image-banner, .about-content {
         flex: 1 1 100%;
+    }
+
+    .lightbox {
+        padding: 1rem;
+    }
+
+    /* ===== Gallery Lightbox ===== */
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+    }
+
+    .lightbox-prev {
+        left: 0.75rem;
+    }
+
+    .lightbox-next {
+        right: 0.75rem;
+    }
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
     }
 }
 

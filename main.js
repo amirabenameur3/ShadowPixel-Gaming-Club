@@ -2,12 +2,24 @@
 // DOM ELEMENTS
 // =========================
 
+/* Mobile menu elements */
 const menuButton = document.querySelector('.menu-button');
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileLinks = document.querySelectorAll('.mobile-nav a');
 const menuIcon = document.querySelector('.menu-icon');
+
+/* Header and scroll reveal elements */
 const header = document.querySelector('.site-header');
 const revealElements = document.querySelectorAll('.reveal');
+
+/* Gallery lightbox elements */
+const galleryImages = document.querySelectorAll('.gallery-image');
+const lightbox = document.getElementById('gallery-lightbox');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxCaption = document.querySelector('.lightbox-caption');
+const lightboxClose = document.querySelector('.lightbox-close');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
 
 // =========================
 // MOBILE MENU
@@ -100,3 +112,117 @@ if (revealElements.length > 0) {
 
     });
 }
+
+// =========================
+// GALLERY LIGHTBOX
+// =========================
+
+let currentImageIndex = 0;
+let lastFocusedElement = null;
+
+const showLightboxImage = (index) => {
+    const selectedImage = galleryImages[index];
+
+    lightboxImage.src = selectedImage.src;
+    lightboxImage.alt = selectedImage.alt;
+    lightboxCaption.textContent = selectedImage.dataset.caption;
+
+    currentImageIndex = index;
+};
+
+const openLightbox = (index) => {
+    if (!lightbox || !lightboxImage || !lightboxCaption) return;
+
+    lastFocusedElement = document.activeElement;
+
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    showLightboxImage(index);
+    lightboxClose.focus();
+};
+
+const closeLightbox = () => {
+    if (!lightbox) return;
+
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+
+    if(lastFocusedElement) {
+        lastFocusedElement.focus();
+    }
+};
+
+const showPrevImage = () => {
+    const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    showLightboxImage(prevIndex);
+};
+
+const showNextImage = () => {
+    const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+    showLightboxImage(nextIndex);
+};
+
+galleryImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        openLightbox(index);
+    });
+
+    image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            openLightbox(index);
+        }
+    });
+});
+
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrevImage);
+}
+
+if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNextImage);
+}
+
+if (lightbox) {
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
+document.addEventListener('keydown', (event) => {
+    if (!lightbox || !lightbox.classList.contains('active')) return;
+
+    const focusableElements = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+    if (event.key === 'ArrowLeft') {
+        showPrevImage();
+    }
+    if (event.key === 'ArrowRight') {
+        showNextImage();
+    }
+
+    if (event.key === 'Tab') {
+        if(event.shiftKey && document.activeElement === firstElement) {
+            if (document.activeElement === firstElement) {
+                event.preventDefault();
+                lastElement.focus();
+            }
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
+        }
+    }
+});
