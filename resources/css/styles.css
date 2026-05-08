@@ -961,7 +961,15 @@ footer {
 
     .lightbox-prev,
     .lightbox-next {
-        bottom: 10rem;
+        bottom: 8rem;
+    }
+
+    .lightbox-prev {
+        left: 30%;
+    }
+
+    .lightbox-next {
+        right: 30%;
     }
 
     .footer-navigation ul {
@@ -990,18 +998,5 @@ footer {
 
     .social-icon {
         font-size: 0.95rem;
-    }
-
-    .lightbox-prev,
-    .lightbox-next {
-        bottom: 18rem;
-    }
-
-    .lightbox-prev {
-        left: 30%;
-    }
-
-    .lightbox-next {
-        right: 30%;
     }
 }
