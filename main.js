@@ -34,6 +34,10 @@ const genreError = document.getElementById('genre-error');
 const messageError = document.getElementById('message-error');
 const formSuccess = document.getElementById('form-success');
 
+/* Event filter elements */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const eventCards = document.querySelectorAll('.event-card');
+
 // =========================
 // MOBILE MENU
 // =========================
@@ -345,5 +349,33 @@ if (joinForm) {
         } else {
             showSuccess(messageInput, messageError);
         }
+    });
+}
+
+// =========================
+// EVENTS FILTERING
+// =========================
+
+if (filterButtons.length > 0 && eventCards.length > 0) {
+    filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const selectedFilter = button.dataset.filter;
+
+            filterButtons.forEach((btn) => {
+                btn.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+            eventCards.forEach((card) => {
+                const cardCategory = card.dataset.category;
+
+                if (selectedFilter === 'all' || selectedFilter === cardCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
 }
