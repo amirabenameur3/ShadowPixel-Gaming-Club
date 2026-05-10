@@ -92,27 +92,58 @@
                     <h2>What We Do</h2>
                 </div>
                 
+                <!-- Filter Buttons -->
+                <div class="events-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="social">Social</button>
+                    <button class="filter-btn" data-filter="competitive">Competitive</button>
+                    <button class="filter-btn" data-filter="discussion">Discussion</button>
+                    <button class="filter-btn" data-filter="online">Online</button>
+                    <button class="filter-btn" data-filter="creative">Creative</button>
+                    <button class="filter-btn" data-filter="workshop">Workshop</button>
+                </div>
+                
                 <div class="events-section">  
-                    <article class="event-card reveal">
+                    <article class="event-card reveal" data-category="social">
                         <h3>🎮 Weekly Game Nights</h3>
                         <p>Every Friday, members gather to play popular multiplayer games, explore co-op adventures, 
                             and enjoy casual matches in a relaxed atmosphere.</p>
                     </article>
                         
-                    <article class="event-card reveal">
+                    <article class="event-card reveal" data-category="competitive">
                         <h3>🏆 Monthly Tournaments</h3>
                         <p>Once a month, we host friendly tournaments where members can test their skills, 
                             compete for fun prizes, and celebrate the spirit of competition.</p>
                     </article>
                         
-                    <article class="event-card reveal">
+                    <article class="event-card reveal" data-category="discussion">
                         <h3>📰 New Release Discussions</h3>
                         <p>We talk about the latest game launches, share opinions, review gameplay, and recommend titles worth trying.</p>
                     </article>
                         
-                    <article class="event-card reveal">
+                    <article class="event-card reveal" data-category="competitive">
                         <h3>⚔ Team Challenges</h3>
                         <p>Members join forces in squad-based games and strategy challenges that build communication, teamwork, and club spirit.</p>
+                    </article>
+
+                    <article class="event-card reveal" data-category="workshop">
+                        <h3>🛠 Game Design Workshops</h3>
+                        <p>Members learn the basics of level design, storytelling, character creation, and game development tools.</p>
+                    </article>
+                    
+                    <article class="event-card reveal" data-category="online">
+                        <h3>🌐 Online Co-op Sessions</h3>
+                        <p>Members team up remotely to play co-op games, complete missions, and stay connected outside club meetings.</p>
+                    </article>
+                    
+                    <article class="event-card reveal" data-category="creative">
+                        <h3>🎨 Fan Art & Cosplay Meetups</h3>
+                        <p>Creative members share fan art, cosplay ideas, custom characters, and game-inspired projects.</p>
+                    </article>
+                    
+                    <article class="event-card reveal" data-category="discussion">
+                        <h3>🎤 Game Review Talks</h3>
+                        <p>Members discuss their favorite games, compare mechanics, and share honest reviews and recommendations.</p>
                     </article>
                 </div>
             </section>
