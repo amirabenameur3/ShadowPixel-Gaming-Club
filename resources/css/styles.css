@@ -418,6 +418,72 @@ a:focus-visible, button:focus-visible, .button:focus-visible {
 }
 
 /* =========================
+   Countdown Timer
+========================= */
+
+.countdown-section {
+    padding: 2rem 1rem;
+}
+
+.countdown-container {
+    width: min(100% - 2rem, 70rem);
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    background: rgba(30, 41, 59, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.countdown-label {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    min-width: 120px;
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+    transform: translateY(-4px);
+}
+
+.time-box span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+}
+
+.time-box small {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-finished {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+/* =========================
    Card Section
 ========================= */
 

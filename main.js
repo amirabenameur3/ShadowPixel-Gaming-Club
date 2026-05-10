@@ -38,6 +38,12 @@ const formSuccess = document.getElementById('form-success');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const eventCards = document.querySelectorAll('.event-card');
 
+/* Coutntdown timer elements */
+const daysElement = document.getElementById('days');
+const hoursElement = document.getElementById('hours');
+const minutesElement = document.getElementById('minutes');
+const secondsElement = document.getElementById('seconds');
+
 // =========================
 // MOBILE MENU
 // =========================
@@ -378,4 +384,46 @@ if (filterButtons.length > 0 && eventCards.length > 0) {
             });
         });
     });
+}
+
+// =========================
+// COUNTDOWN TIMER
+// =========================
+
+if (daysElement && hoursElement && minutesElement && secondsElement) {
+    const countdownDate = new Date('June 15, 2026 18:00:00').getTime();
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance <= 0) {
+            clearInterval(countdownInterval);
+
+            document.querySelector('.countdown').innerHTML = `
+                <p class="countdown-finished">
+                    🎉 The Tournament Has Started!
+                </p>
+            `;
+
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysElement.textContent = String(days).padStart(2, '0');
+        hoursElement.textContent = String(hours).padStart(2, '0');
+        minutesElement.textContent = String(minutes).padStart(2, '0');
+        secondsElement.textContent = String(seconds).padStart(2, '0');
+    };
+
+    updateCountdown();
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
 }
