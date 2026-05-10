@@ -21,6 +21,19 @@ const lightboxClose = document.querySelector('.lightbox-close');
 const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
 
+/* Join form elements */
+const joinForm = document.getElementById('join-form');
+const nameInput = document.getElementById('member-name');
+const emailInput = document.getElementById('member-email');
+const genreInput = document.getElementById('game-genre');
+const messageInput = document.getElementById('member-message');
+
+const nameError = document.getElementById('name-error');
+const emailError = document.getElementById('email-error');
+const genreError = document.getElementById('genre-error');
+const messageError = document.getElementById('message-error');
+const formSuccess = document.getElementById('form-success');
+
 // =========================
 // MOBILE MENU
 // =========================
@@ -226,3 +239,111 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+// =========================
+// JOIN FORM VALIDATION
+// =========================
+
+// Helper functions 
+const showError = (input, errorElement, message) => {
+    input.classList.add('input-error');
+    input.classList.remove('input-success');
+    errorElement.textContent = message;
+};
+
+const showSuccess = (input, errorElement) => {
+    input.classList.remove('input-error');
+    input.classList.add('input-success');
+    errorElement.textContent = '';
+};
+
+const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+// Form submission handler 
+if (joinForm) {
+    joinForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        let isFormValid = true;
+        formSuccess.textContent = '';
+
+        if (nameInput.value.trim() === '') {
+            showError(nameInput, nameError, 'Please enter your name.');
+            isFormValid = false;
+        } else {
+            showSuccess(nameInput, nameError);
+        }
+
+        if (emailInput.value.trim() === '') {
+            showError(emailInput, emailError, 'Please enter your email.');
+            isFormValid = false;
+        } else if (!isValidEmail(emailInput.value.trim())) {
+            showError(emailInput, emailError, 'Please enter a valid email address.');
+            isFormValid = false;
+        } else {
+            showSuccess(emailInput, emailError);
+        }
+
+        if (genreInput.value === '') {
+            showError(genreInput, genreError, 'Please choose a game genre.');
+            isFormValid = false;
+        } else {
+            showSuccess(genreInput, genreError);
+        }
+
+        if (messageInput.value.trim().length < 10) {
+            showError(messageInput, messageError, 'Please write at least 10 characters.');
+            isFormValid = false;
+        } else {
+            showSuccess(messageInput, messageError);
+        }
+
+        if (isFormValid) {
+            formSuccess.textContent = 'Application submitted successfully. Welcome to ShadowPixel!';
+            joinForm.reset();
+
+            [nameInput, emailInput, genreInput, messageInput].forEach((input) => {
+                input.classList.remove('input-success');
+            });
+        }
+    });
+}
+
+// Real-time validation
+if (joinForm) {
+    nameInput.addEventListener('input', () => {
+        if (nameInput.value.trim() === '') {
+            showError(nameInput, nameError, 'Please enter your name.');
+        } else {
+            showSuccess(nameInput, nameError);
+        }
+    });
+
+    emailInput.addEventListener('input', () => {
+        if (emailInput.value.trim() === '') {
+            showError(emailInput, emailError, 'Please enter your email.');
+        } else if (!isValidEmail(emailInput.value.trim())) {
+            showError(emailInput, emailError, 'Please enter a valid email address.');
+        } else {
+            showSuccess(emailInput, emailError);
+        }
+    });
+
+    genreInput.addEventListener('change', () => {
+        if (genreInput.value === '') {
+            showError(genreInput, genreError, 'Please choose a game genre.');
+        } else {
+            showSuccess(genreInput, genreError);
+        }
+    });
+
+    messageInput.addEventListener('input', () => {
+        if (messageInput.value.trim().length < 10) {
+            showError(messageInput, messageError, 'Please write at least 10 characters.');
+        } else {
+            showSuccess(messageInput, messageError);
+        }
+    });
+}

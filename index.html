@@ -227,9 +227,69 @@
                     </p>
                 </div>
                 
-                <div class="subscription-container">
-                    <p class="email"><span class="subtitle">Email:</span> <a href="mailto:shadowpixelclub@email.com">shadowpixelclub@email.com</a></p>
-                    <a href="mailto:shadowpixelclub@email.com" class="button btn-secondary">Join the Club</a>
+                <div class="subscription-container reveal">
+                    <form id="join-form" class="join-form" novalidate>
+                        <div class="form-group">
+                            <label for="member-name">Name</label>
+                            <input
+                              type="text"
+                              id="member-name"
+                              name="memberName"
+                              placeholder="Enter your name"
+                              autocomplete="name"
+                              required
+                              aria-describedby="name-error">
+                            <small id="name-error" class="error-message" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="member-email">Email</label>
+                            <input
+                              type="email"
+                              id="member-email"
+                              name="memberEmail"
+                              placeholder="Enter your email"
+                              autocomplete="email"
+                              required
+                              aria-describedby="email-error">
+                            <small id="email-error" class="error-message" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="game-genre">Favorite Game Genre</label>
+                            <select id="game-genre" name="gameGenre" required aria-describedby="genre-error">
+                                <option value="">Choose a genre</option>
+                                <option value="rpg">Fantasy RPG</option>
+                                <option value="cyberpunk">Cyberpunk Racing</option>
+                                <option value="sci-fi">Sci-Fi Adventure</option>
+                                <option value="survival">Survival Exploration</option>
+                                <option value="strategy">Strategy & Tactics</option>
+                                <option value="indie">Indie Storytelling</option>
+                            </select>
+                            <small id="genre-error" class="error-message" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="member-message">Why do you want to join?</label>
+                            <textarea
+                              id="member-message"
+                              name="memberMessage"
+                              rows="5"
+                              placeholder="Tell us a little about yourself"
+                              required
+                              aria-describedby="message-error"></textarea>
+                            <small id="message-error" class="error-message" aria-live="polite"></small>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Send me club news and event updates</label>
+                        </div>
+                        
+                        <button type="submit" class="button btn-secondary">Submit Application</button>
+
+                        <p id="form-success" class="success-message" aria-live="polite"></p>
+                    </form>
                 </div>
             </section>
         </main>
