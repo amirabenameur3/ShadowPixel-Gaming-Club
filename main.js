@@ -391,7 +391,7 @@ if (filterButtons.length > 0 && eventCards.length > 0) {
 // =========================
 
 if (daysElement && hoursElement && minutesElement && secondsElement) {
-    const countdownDate = new Date('June 15, 2026 18:00:00').getTime();
+    const countdownDate = new Date('November 15, 2026 18:00:00').getTime();
 
     const updateCountdown = () => {
         const now = new Date().getTime();
